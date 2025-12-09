@@ -77,13 +77,8 @@ public class FileManager {
 
             LocalDate date = dateStr.isBlank() ? null : LocalDate.parse(dateStr);
 
-            Task task = new Task(title);
-            task.setDescription(description);
-            task.setDueDate(date);
-            task.setPriority(priority);
-            task.setCompleted(completed);
-
-            return task;
+            // On recrée la tâche complète
+            return new Task(title, description, date, priority, completed);
 
         } catch (Exception e) {
             System.err.println("Ligne invalide dans le fichier des tâches : " + line);

@@ -7,6 +7,8 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.geometry.Insets?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
@@ -21,17 +23,34 @@
     </center>
 
     <bottom>
-        <HBox spacing="10">
+        <VBox spacing="8">
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
 
-            <TextField fx:id="titleField"
-                       promptText="Titre de la tâche"
-                       HBox.hgrow="ALWAYS"/>
-            <Button text="Ajouter" onAction="#onAddTask"/>
-            <Button text="Supprimer" onAction="#onDeleteTask"/>
-        </HBox>
+            <HBox spacing="10">
+                <Label text="Titre :" minWidth="80"/>
+                <TextField fx:id="titleField" promptText="Titre de la tâche" HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Description :" minWidth="80"/>
+                <TextField fx:id="descriptionField" promptText="Description rapide" HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Date limite :" minWidth="80"/>
+                <DatePicker fx:id="dueDatePicker"/>
+
+                <Label text="Priorité :" minWidth="60"/>
+                <ChoiceBox fx:id="priorityChoiceBox"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Ajouter" onAction="#onAddTask"/>
+                <Button text="Supprimer" onAction="#onDeleteTask"/>
+            </HBox>
+        </VBox>
     </bottom>
 
 </BorderPane>

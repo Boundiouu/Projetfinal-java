@@ -20,7 +20,12 @@ public class Task {
         this.completed = completed;
     }
 
-    // Constructeur simplifié si besoin
+    // Constructeur pratique sans id (id = 0 par défaut)
+    public Task(String title, String description, LocalDate dueDate, String priority, boolean completed) {
+        this(0, title, description, dueDate, priority, completed);
+    }
+
+    // Optionnel : si on veut juste une tâche avec un titre
     public Task(String title) {
         this(0, title, "", null, "NORMALE", false);
     }
@@ -72,5 +77,26 @@ public class Task {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        if (priority != null && !priority.isBlank()) {
+            sb.append("[").append(priority).append("] ");
+        }
+
+        sb.append(title != null ? title : "");
+
+        if (dueDate != null) {
+            sb.append(" (à faire pour ").append(dueDate).append(")");
+        }
+
+        if (completed) {
+            sb.append(" ✔");
+        }
+
+        return sb.toString();
     }
 }
