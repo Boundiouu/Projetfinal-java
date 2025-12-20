@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="projetjava.controller.TaskFormController"
+      spacing="10"
+      alignment="CENTER_LEFT">
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <Label text="Modifier la tâche" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label text="Titre :" />
+    <TextField fx:id="titleField" />
+
+    <Label text="Description :" />
+    <TextField fx:id="descriptionField" />
+
+    <Label text="Date limite :" />
+    <DatePicker fx:id="dueDatePicker" />
+
+    <Label text="Priorité :" />
+    <ChoiceBox fx:id="priorityChoiceBox" />
+
+    <CheckBox fx:id="completedCheckBox" text="Marquer comme terminée" />
+
+    <HBox spacing="10">
+        <Button text="Annuler" onAction="#onCancel"/>
+        <Button text="Enregistrer" onAction="#onSave"/>
+    </HBox>
+
+</VBox>

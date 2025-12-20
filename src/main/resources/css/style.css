@@ -1,0 +1,60 @@
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #f4f4f4;
+}
+
+/* Titre */
+.label {
+    -fx-font-size: 14px;
+}
+
+/* Gros titre */
+.label.title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* Boutons */
+.button {
+    -fx-background-color: #7f8cff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 6 12;
+}
+
+.button:hover {
+    -fx-background-color: #6370ff;
+}
+
+/* Champs texte */
+.text-field {
+    -fx-background-radius: 5;
+    -fx-background-color: white;
+    -fx-padding: 6;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+}
+
+/* Date picker */
+.date-picker {
+    -fx-background-radius: 5;
+}
+
+/* Liste des tâches */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-padding: 5;
+    -fx-border-radius: 5;
+}
+
+/* Tâches terminées */
+.list-cell:filled:selected {
+    -fx-background-color: #c7d0ff;
+}
+
+.list-cell:filled {
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}

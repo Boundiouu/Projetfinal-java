@@ -5,29 +5,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.net.URL;
-
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
-        // Vérifier le chemin du FXML
-        URL fxmlUrl = Main.class.getResource("/fxml/main.fxml");
-        if (fxmlUrl == null) {
-            System.out.println("❌ ERREUR : main.fxml introuvable au chemin /fxml/main.fxml");
-            return;
-        } else {
-            System.out.println("✅ FXML trouvé : " + fxmlUrl);
-        }
-
+    public void start(Stage stage) {
         try {
-            FXMLLoader loader = new FXMLLoader(fxmlUrl);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
             Scene scene = new Scene(loader.load());
+
+            // Ajout du style CSS
+            scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+
             stage.setTitle("Gestionnaire de tâches");
             stage.setScene(scene);
             stage.show();
+
         } catch (Exception e) {
-            System.out.println("❌ Exception dans start() :");
+            System.out.println("❌ Erreur lors du chargement de l'interface :");
             e.printStackTrace();
         }
     }

@@ -48,8 +48,10 @@
 
             <HBox spacing="10" alignment="CENTER_RIGHT">
                 <Button text="Ajouter" onAction="#onAddTask"/>
+                <Button text="Modifier" onAction="#onEditTask"/>
                 <Button text="Supprimer" onAction="#onDeleteTask"/>
             </HBox>
+
         </VBox>
     </bottom>
 
